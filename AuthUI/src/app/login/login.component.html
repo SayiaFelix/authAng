@@ -1,4 +1,4 @@
-<p class="fw-bold">login works!</p>
+<!-- <p class="fw-bold">login works!</p>
 <div class="container">
     <h2 class="">Login</h2>
     <hr>
@@ -19,5 +19,27 @@
         </div>
         <button type="submit" class="btn btn-lg btn-success mt-1">Login</button>
     </form>
-  </div>
+  </div> -->
 
+  <form>
+    <fieldset>
+        <legend>Login</legend>
+        <div class="form-field">
+            <label>Email:</label>
+            <input name="email" formControlName="email">
+        </div>
+        <div class="form-field">
+            <label>Password:</label>
+            <input name="password" formControlName="password" 
+                   type="password">
+        </div>
+    </fieldset>
+
+    <div class="mt-4">
+        <p>Dont have an account ?? <br><a href="/signup">Signup</a></p>
+  </div>
+    <div class="form-buttons">
+        <button class="button button-primary" 
+                (click)="login()">Login</button>
+    </div>
+</form>
