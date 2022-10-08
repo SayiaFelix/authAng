@@ -19,12 +19,11 @@ export class LoginComponent implements OnInit {
     });
   }
 login(){
-  const val = this.form.value;
 
+  const val = this.form.value;
   if (val.email && val.password){
     this.AuthServiceService.login(val.email, val.password)
     .subscribe(
-
       ()=>{
         console.log('user is logged in successful');
         this.router.navigateByUrl('/')
