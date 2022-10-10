@@ -9,7 +9,7 @@ import { AuthServiceService } from '../auth-service.service';
 })
 export class LoginComponent{
   
-  form:FormGroup | undefined
+  LoginForm!: FormGroup; 
 
   constructor(private fb:FormBuilder,private AuthServiceService:AuthServiceService,private router:Router) { 
   }
@@ -32,7 +32,7 @@ export class LoginComponent{
 
 
   ngOnInit(): void {
-    this.form= this.fb.group({
+    this.LoginForm= this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });

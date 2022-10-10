@@ -2,16 +2,16 @@
 <div class="container">
     <h2 class="">Login</h2>
     <hr>
-    <form >
+    <form [formGroup]="LoginForm">
         <div class="form-group mb-2">
   
             <label for="name">Username</label> <br>
-            <input type="text" required>
+            <input formControlName="Username" type="text" required>
             
         </div>
         <div class="form-group mt-3">
             <label for="complete">Password</label> <br>
-            <input type='text'  required>
+            <input formControlName="password"  type='text'  required>
   
         </div>
         <div class="mt-4">
@@ -21,7 +21,7 @@
     </form>
   </div>
 <!-- 
-  <form formGroup="form">
+  <form >
     <fieldset>
         <legend>Login</legend>
         <div class="form-field">
