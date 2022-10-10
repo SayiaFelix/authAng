@@ -9,34 +9,34 @@ import { AuthServiceService } from '../auth-service.service';
 })
 export class LoginComponent{
   
-  form:FormGroup
+  form:FormGroup | undefined
 
   constructor(private fb:FormBuilder,private AuthServiceService:AuthServiceService,private router:Router) { 
-
-    this.form= this.fb.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
-    });
   }
-login(){
+// login(){
 
-  const val = this.form.value;
-  if (val.email && val.password){
-    this.AuthServiceService.login(val.email, val.password)
-    .subscribe(
-      ()=>{
-        console.log('user is logged in successful');
-        this.router.navigateByUrl('/')
-      }
+//   const val = this.form.value;
+//   if (val.email && val.password){
+//     this.AuthServiceService.login(val.email, val.password)
+//     .subscribe(
+//       ()=>{
+//         console.log('user is logged in successful');
+//         this.router.navigateByUrl('/')
+//       }
 
-    )
-  }
-}
+//     )
+//   }
+// }
 
 
 
 
   ngOnInit(): void {
+    this.form= this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+
   }
 
 }
