@@ -26,7 +26,23 @@ export class SignupComponent implements OnInit {
 
 
 
+Signup(){
 
+  if(this.SignupForm.valid){
+    console.log(this.SignupForm.value);
+    // send obj to db
+
+  }else{
+    // console.log('Form is not valid')
+    // through an error
+
+    this.validateAllFormFields(this.SignupForm)
+    alert('Form is  invalid')
+
+
+  }
+
+}
 
 private validateAllFormFields(formGroup:FormGroup)
 {
