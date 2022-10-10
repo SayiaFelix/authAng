@@ -3,12 +3,13 @@
     <h2 class="">Login</h2>
     <hr>
     <form [formGroup]="LoginForm">
-        <div class="form-group mb-2">
+        <div class="form-group mb-2" [class.error]="LoginForm.controls['username'].dirty && LoginForm.hasError('required','username')">
             <label for="name">Username</label> <br>
             <input formControlName="username" type="text" required="required">
         </div>
         <small  *ngIf="LoginForm.controls['username'].dirty && LoginForm.hasError('required','username')"  class="text-danger">Username is required</small>
-        <div class="form-group mt-3">
+     
+        <div class="form-group mt-3"  [class.error]="LoginForm.controls['password'].dirty && LoginForm.hasError('required','password')">
             <label for="complete">Password</label> <br>
             <input formControlName="password"  type='text'  required>
   
