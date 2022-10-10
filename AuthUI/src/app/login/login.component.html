@@ -4,16 +4,16 @@
     <hr>
     <form [formGroup]="LoginForm">
         <div class="form-group mb-2">
-  
             <label for="name">Username</label> <br>
             <input formControlName="Username" type="text" required>
-            
         </div>
+        <small class="text-danger">Username is required</small>
         <div class="form-group mt-3">
             <label for="complete">Password</label> <br>
             <input formControlName="password"  type='text'  required>
   
         </div>
+        <small class="text-danger">Password is required</small>
         <div class="mt-4">
               <p>Dont have an account ?? <br><a href="/signup">Signup</a></p>
         </div>
