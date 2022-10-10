@@ -13,20 +13,29 @@ export class LoginComponent{
 
   constructor(private fb:FormBuilder,private AuthServiceService:AuthServiceService,private router:Router) { 
   }
-// login(){
+login(){
 
-//   const val = this.form.value;
-//   if (val.email && val.password){
-//     this.AuthServiceService.login(val.email, val.password)
-//     .subscribe(
-//       ()=>{
-//         console.log('user is logged in successful');
-//         this.router.navigateByUrl('/')
-//       }
+  if(this.LoginForm.valid){
+    console.log(this.LoginForm.value);
+    // send obj to db
 
-//     )
-//   }
-// }
+  }else{
+    console.log('Form is not valid')
+    // through an error
+
+
+  }
+  // if (val.email && val.password){
+  //   this.AuthServiceService.login(val.email, val.password)
+  //   .subscribe(
+  //     ()=>{
+  //       console.log('user is logged in successful');
+  //       this.router.navigateByUrl('/')
+  //     }
+
+  //   )
+  // }
+}
 
 
 
