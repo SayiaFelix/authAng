@@ -22,12 +22,7 @@ export class SignupComponent implements OnInit {
   })
 
 }
-
-
-
-
 Signup(){
-
   if(this.SignupForm.valid){
     console.log(this.SignupForm.value);
     // send obj to db
@@ -38,8 +33,6 @@ Signup(){
 
     this.validateAllFormFields(this.SignupForm)
     alert('Form is  invalid')
-
-
   }
 
 }
@@ -52,12 +45,9 @@ Object.keys(formGroup.controls).forEach(field=>{
   if( control instanceof FormControl){
     control.markAsDirty( {onlySelf: true});
   }
-
   else if( control instanceof FormGroup){
     this.validateAllFormFields(control);
   }
-
-
 })
   
 }
