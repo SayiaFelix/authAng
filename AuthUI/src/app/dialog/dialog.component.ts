@@ -22,5 +22,10 @@ productForm!: FormGroup
     comment: ['',Validators.required],
     date: ['',Validators.required]
   })
+
+
+}
+addProduct(){
+  
 }
 }
