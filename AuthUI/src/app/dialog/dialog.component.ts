@@ -26,6 +26,6 @@ productForm!: FormGroup
 
 }
 addProduct(){
-  
+  console.log(this.productForm.value);
 }
 }
