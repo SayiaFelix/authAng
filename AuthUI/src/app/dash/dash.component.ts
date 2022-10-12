@@ -20,6 +20,7 @@ export class DashComponent implements OnInit {
     });
   }
 
+  
   getAllProduct(){
     this.api.getProduct()
     .subscribe({
