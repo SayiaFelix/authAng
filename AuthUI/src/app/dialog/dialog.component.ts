@@ -38,8 +38,8 @@ if(this.productForm.valid){
     next:(res)=>{
       alert("product added successfully!");
       this.productForm.reset();
-      this.dialogRef.close();
-      
+      this.dialogRef.close('save');
+
     },error:()=>{
       alert("Error while adding the product")
     }

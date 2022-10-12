@@ -8,6 +8,15 @@
       "comment": "fresh",
       "date": "2022-10-11T21:00:00.000Z",
       "id": 1
+    },
+    {
+      "name": "mango",
+      "category": "Fruits",
+      "fresh": "Second Hand",
+      "price": 233,
+      "comment": "not fresh",
+      "date": "2022-10-19T21:00:00.000Z",
+      "id": 2
     }
   ],
   "comments": [
