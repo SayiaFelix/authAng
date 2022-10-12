@@ -41,21 +41,30 @@ if(this.editData){
 }
 }
 
-
 addProduct(){
-if(this.productForm.valid){
-  this.api.postProduct(this.productForm.value)
-  .subscribe({
-    next:(res)=>{
-      alert("product added successfully!");
-      this.productForm.reset();
-      this.dialogRef.close('save');
-
-    },error:()=>{
-      alert("Error while adding the product")
-    }
-  })
-
+if(!this.editData){
+  if(this.productForm.valid){
+    this.api.postProduct(this.productForm.value)
+    .subscribe({
+      next:(res)=>{
+        alert("product added successfully!");
+        this.productForm.reset();
+        this.dialogRef.close('save');
+  
+      },error:()=>{
+        alert("Error while adding the product")
+      }
+    })
+  
+  }
+}else{
+  this.updateProduct()
 }
 }
+
+updateProduct(){
+  
+}
+
+
 }
