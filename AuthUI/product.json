@@ -1,6 +1,14 @@
 {
   "productList": [
-
+    {
+      "name": "apple",
+      "category": "Vegetable",
+      "fresh": "Refurbished",
+      "price": 200,
+      "comment": "fresh",
+      "date": "2022-10-11T21:00:00.000Z",
+      "id": 1
+    }
   ],
   "comments": [
     {
