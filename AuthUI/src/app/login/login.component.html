@@ -1,25 +1,31 @@
 
 <div class="container">
-    <h2 class="">Login</h2>
-    <hr>
-    <form [formGroup]="LoginForm">
-        <div class="form-group mb-2" [class.error]="LoginForm.controls['username'].dirty && LoginForm.hasError('required','username')">
-            <label for="name">Username</label> <br>
-            <input formControlName="username" type="text" required="required">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="">Login</h2>
+            <hr>
+            <form [formGroup]="LoginForm">
+                <div class="form-group mb-2" [class.error]="LoginForm.controls['username'].dirty && LoginForm.hasError('required','username')">
+                    <label for="name">Username</label> <br>
+                    <input formControlName="username" type="text" required="required">
+                </div>
+                <small  *ngIf="LoginForm.controls['username'].dirty && LoginForm.hasError('required','username')"  class="text-danger">Username is required</small>
+             
+                <div class="form-group mt-3"  [class.error]="LoginForm.controls['password'].dirty && LoginForm.hasError('required','password')">
+                    <label for="complete">Password</label> <br>
+                    <input formControlName="password"  type='text'  required>
+          
+                </div>
+                <small *ngIf="LoginForm.controls['password'].dirty && LoginForm.hasError('required','password')"  class="text-danger">Password is required</small>
+                <div class="mt-4">
+                      <p>Dont have an account ?? <br><a href="/signup">Signup</a></p>
+                </div>
+                <button  (click)="login()" type="submit" class="btn btn-lg btn-success mt-1">Login</button>
+            </form>
         </div>
-        <small  *ngIf="LoginForm.controls['username'].dirty && LoginForm.hasError('required','username')"  class="text-danger">Username is required</small>
-     
-        <div class="form-group mt-3"  [class.error]="LoginForm.controls['password'].dirty && LoginForm.hasError('required','password')">
-            <label for="complete">Password</label> <br>
-            <input formControlName="password"  type='text'  required>
+
+    </div>
   
-        </div>
-        <small *ngIf="LoginForm.controls['password'].dirty && LoginForm.hasError('required','password')"  class="text-danger">Password is required</small>
-        <div class="mt-4">
-              <p>Dont have an account ?? <br><a href="/signup">Signup</a></p>
-        </div>
-        <button  (click)="login()" type="submit" class="btn btn-lg btn-success mt-1">Login</button>
-    </form>
   </div>
 <!-- 
   <form >
