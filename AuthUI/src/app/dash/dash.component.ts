@@ -51,7 +51,9 @@ export class DashComponent implements OnInit {
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
-    }}
+    }
+  }
+ 
   ngOnInit(): void {
     this.getAllProduct();
   }

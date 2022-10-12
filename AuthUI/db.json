@@ -1,0 +1,23 @@
+{
+  "productList": [
+    {
+      "name": "mango",
+      "category": "Fruits",
+      "fresh": "Refurbished",
+      "price": 20,
+      "comment": "fresh",
+      "date": "2022-10-11T21:00:00.000Z",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
