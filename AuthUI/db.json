@@ -4,7 +4,7 @@
       "name": "mango",
       "category": "Fruits",
       "fresh": "Refurbished",
-      "price": 20,
+      "price": 30,
       "comment": "fresh",
       "date": "2022-10-11T21:00:00.000Z",
       "id": 1
@@ -17,6 +17,15 @@
       "comment": "fresh wow",
       "date": "2022-10-03T21:00:00.000Z",
       "id": 2
+    },
+    {
+      "name": "hdkuwhio",
+      "category": "Electronics",
+      "fresh": "Refurbished",
+      "price": 12,
+      "comment": "wqeqw",
+      "date": "2022-10-05T21:00:00.000Z",
+      "id": 3
     }
   ],
   "comments": [

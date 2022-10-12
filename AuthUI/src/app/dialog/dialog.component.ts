@@ -31,7 +31,7 @@ actionBtn : string= "save"
   })
 
 if(this.editData){
-  this.actionBtn='Update'
+  this.actionBtn='update'
   this.productForm.controls['name'].setValue(this.editData.name);
   this.productForm.controls['category'].setValue(this.editData.category);
   this.productForm.controls['date'].setValue(this.editData.date);
@@ -63,7 +63,19 @@ if(!this.editData){
 }
 
 updateProduct(){
-  
+  this.api.putProduct(this.productForm.value,this.editData.id)
+  .subscribe({
+    next:(res)=>{
+      alert("Product updated Successfully");
+      this.productForm.reset();
+      this.dialogRef.close('update');
+    },
+    error:()=>{
+      alert('Error while updating the value');
+    }
+  })
+
+
 }
 
 

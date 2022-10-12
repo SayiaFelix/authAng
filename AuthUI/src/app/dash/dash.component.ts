@@ -22,11 +22,13 @@ export class DashComponent implements OnInit {
   constructor(public dialog: MatDialog ,private api : ApiService) {}
 
   openDialog() {
-    const dialogRef = this.dialog.open(DialogComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-   
-    });
+    this.dialog.open(DialogComponent,{
+      width:'40%'
+    }).afterClosed().subscribe(val => {
+    if(val==='save'){
+        this.getAllProduct();
+      }
+    })
   }
 
 
@@ -50,9 +52,12 @@ export class DashComponent implements OnInit {
    this.dialog.open(DialogComponent,{
      width:'40%',
      data:row
-})
-
-  }
+}).afterClosed().subscribe(val => {
+  if(val==='update'){
+      this.getAllProduct();
+    }
+  })
+}
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
