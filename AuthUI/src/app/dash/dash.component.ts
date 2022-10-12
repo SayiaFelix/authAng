@@ -59,17 +59,19 @@ export class DashComponent implements OnInit {
   })
 }
 
-deleteProduct(id: number){
+deleteProduct(id : number){
   this.api.deleteProduct(id)
   .subscribe({
     next:(res)=>{
       alert("Product Deleted Successfully");
-  
+       this.getAllProduct();
+
     },
     error:()=>{
       alert('Error while Deleting the product');
     }
   })
+
 }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
