@@ -13,7 +13,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class DashComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'category', 'fresh', 'price','comment','date'];
+  displayedColumns: string[] = ['name', 'category', 'fresh', 'price','comment','date','action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
