@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { ApiService } from '../service/api.service';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-dash',
@@ -9,6 +12,12 @@ import { ApiService } from '../service/api.service';
   styleUrls: ['./dash.component.css']
 })
 export class DashComponent implements OnInit {
+
+  displayedColumns: string[] = ['name', 'category', 'fresh', 'price','comment','date'];
+  dataSource!: MatTableDataSource<any>;
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(public dialog: MatDialog ,private api : ApiService) {}
 
@@ -20,11 +29,14 @@ export class DashComponent implements OnInit {
     });
   }
 
-  
+
   getAllProduct(){
     this.api.getProduct()
     .subscribe({
       next:(res)=>{
+        this.dataSource = new MatTableDataSource(res);
+        this.dataSource.paginator=this.paginator;
+        this.dataSource.sort=this.sort;
         console.log(res);
 
       },
