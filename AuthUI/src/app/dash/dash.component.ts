@@ -59,6 +59,18 @@ export class DashComponent implements OnInit {
   })
 }
 
+deleteProduct(id: number){
+  this.api.deleteProduct(id)
+  .subscribe({
+    next:(res)=>{
+      alert("Product Deleted Successfully");
+  
+    },
+    error:()=>{
+      alert('Error while Deleting the product');
+    }
+  })
+}
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -72,5 +84,4 @@ export class DashComponent implements OnInit {
     this.getAllProduct();
   }
   
-
 }
