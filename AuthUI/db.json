@@ -20,7 +20,30 @@
     }
   ],
   "signupusers": [
- 
+    {
+      "firstname": "Felix",
+      "lastname": "Sayia",
+      "email": "Sayia@gmail.com",
+      "username": "felix",
+      "password": "felix",
+      "id": 1
+    },
+    {
+      "firstname": "Felix",
+      "lastname": "Sayia",
+      "email": "Sayiafelix8@gmail.com",
+      "username": "felix",
+      "password": "felix",
+      "id": 2
+    },
+    {
+      "firstname": "Felix",
+      "lastname": "Sayia",
+      "email": "sayiafelix@gmail.com",
+      "username": "felix",
+      "password": "123456",
+      "id": 3
+    }
   ],
   "profile": {
     "name": "typicode"
