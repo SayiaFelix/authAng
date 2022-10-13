@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <div class="card">
+      <div class="card p-2">
         <h2 class="text-center">Sign Up</h2>
     <hr>
     <form  [formGroup]="SignupForm" >
@@ -21,11 +21,9 @@
     
     <div class="form-group mb-2"[class.error]="SignupForm.controls['email'].dirty && SignupForm.hasError('required','email')">
             <label for="name">Email</label> <br>
-            <input type="email" formControlName="email"  required>      
+            <input class="form-control" type="email" formControlName="email"  required>      
     </div>  
     <small *ngIf="SignupForm.controls['email'].dirty && SignupForm.hasError('required','email')"  class="text-danger">Email is required</small>
-
-
       <div class="form-group mb-2" [class.error]="SignupForm.controls['username'].dirty && SignupForm.hasError('required','username')">
             <label for="name">Username</label> <br>
             <input  class="form-control" formControlName="username" type="text" required="required">
@@ -37,11 +35,10 @@
             <input  class="form-control" formControlName="password"  type='text'  required>
         </div>
         <small *ngIf="SignupForm.controls['password'].dirty && SignupForm.hasError('required','password')"  class="text-danger">Password is required</small>
-     
         <div class="mt-4 text-center">
               <p> Already have an account?? <br> <a href="/login">Login</a></p>
         </div>
-        <button type="submit" (click)="Signup()" class="btn btn-lg btn-success mt-1">Sign Up</button>
+        <button type="submit" (click)="Signup()" class="btn btn-lg btn-success mt-1 text-center">Sign Up</button>
     </form>
       </div>
     </div>
