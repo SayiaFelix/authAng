@@ -29,13 +29,13 @@ login(){
       if(user){
         // alert('Login Successfully');
         this.toast.success({detail:'Success Message',summary:"Login Successfully!!",duration:5000})
-        this.toast.info({detail:'Welcome Message',summary:"Welcome to our Dashboard!!",duration:3000})
+        // this.toast.info({detail:'Welcome Message',summary:"Welcome to our Dashboard!!",duration:5000})
         this.LoginForm.reset();
         this.router.navigate(['dashboard']);
       }
       else{
-        this.toast.error({detail:'Failed Message',summary:"Login Failed!!",duration:5000})
-        this.toast.warning({detail:'Warming Message',summary:"User Not Found,Use Correct Details!!",duration:3000})
+        this.toast.error({detail:'FAILED!!!',summary:"Login Failed!!",duration:5000})
+        // this.toast.warning({detail:'Warming Message',summary:"User Not Found,Use Correct Details!!",duration:5000})
         // alert('User not found')
       } 
     },

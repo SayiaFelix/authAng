@@ -87,6 +87,14 @@
       "username": "felixdd",
       "password": "1234567",
       "id": 4
+    },
+    {
+      "firstname": "Felix",
+      "lastname": "EWEW",
+      "email": "SF8@gmail.com",
+      "username": "JA",
+      "password": "1234",
+      "id": 5
     }
   ],
   "profile": {
