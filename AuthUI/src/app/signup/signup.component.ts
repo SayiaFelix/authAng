@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup ,FormControl,Validator, Validators} from '@angul
 })
 
 export class SignupComponent implements OnInit {
-  SignupForm!: FormGroup; 
+  public SignupForm!: FormGroup; 
   constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
