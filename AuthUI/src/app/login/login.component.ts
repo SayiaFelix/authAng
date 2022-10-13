@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthServiceService } from '../auth-service.service';
+import { NgToastService } from 'ng-angular-popup';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +13,7 @@ export class LoginComponent{
   
   public LoginForm!: FormGroup; 
 
-  constructor(private fb:FormBuilder, private http:HttpClient, private router:Router) { }
+  constructor(private fb:FormBuilder, private http:HttpClient, private router:Router,private toast: NgToastService) { }
 
 login(){
   if(this.LoginForm.valid){
@@ -26,12 +27,14 @@ login(){
        a.password === this.LoginForm.value.password
       });
       if(user){
-        alert('Login Successfully');
+        // alert('Login Successfully');
+        this.toast.success({detail:'Success Message',summary:"Login Successfully!!",duration:5000})
         this.LoginForm.reset();
         this.router.navigate(['dashboard']);
       }
       else{
-        alert('User not found')
+        this.toast.error({detail:'Success Message',summary:"Login Failed!! User not Found",duration:5000})
+        // alert('User not found')
       } 
     },
     err=>{
