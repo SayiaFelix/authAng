@@ -1,6 +1,7 @@
 import { Component, Inject, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { NgToastService } from 'ng-angular-popup';
 import { ApiService } from '../service/api.service';
 
 
@@ -16,9 +17,13 @@ freshnessList=['Brand New','Second Hand','Refurbished']
 productForm!: FormGroup
 actionBtn : string= "save"
 
-  constructor(private formbuilder: FormBuilder,
+  constructor
+  (
+    private formbuilder: FormBuilder,
+    private toast : NgToastService,
     @Inject(MAT_DIALOG_DATA) public  editData: any,
-    private api : ApiService,private dialogRef :MatDialogRef<DialogComponent>) { }
+    private api : ApiService,private dialogRef :MatDialogRef<DialogComponent>
+    ) { }
 
   ngOnInit(): void {
   this.productForm= this.formbuilder.group({
@@ -47,12 +52,14 @@ if(!this.editData){
     this.api.postProduct(this.productForm.value)
     .subscribe({
       next:(res)=>{
-        alert("product added successfully!");
+        this.toast.success({detail:'SUCCESS!!!',summary:"Product Added Successfully!!",duration:5000})
+        // alert("!");
         this.productForm.reset();
         this.dialogRef.close('save');
   
       },error:()=>{
-        alert("Error while adding the product")
+        this.toast.error({detail:'ERROR!!!',summary:"Error while adding the product!!",duration:5000})
+        // alert("")
       }
     })
   
@@ -66,12 +73,14 @@ updateProduct(){
   this.api.putProduct(this.productForm.value,this.editData.id)
   .subscribe({
     next:(res)=>{
-      alert("Product updated Successfully");
+      this.toast.success({detail:'SUCCESS!!!',summary:"Product Updated Successfully!!",duration:5000})
+      // alert("Product updated Successfully");
       this.productForm.reset();
       this.dialogRef.close('update');
     },
     error:()=>{
-      alert('Error while updating the value');
+      this.toast.error({detail:'ERROR!!!',summary:"Error while updating the value!!",duration:5000})
+     
     }
   })
 

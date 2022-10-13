@@ -28,7 +28,7 @@ login(){
       });
       if(user){
         // alert('Login Successfully');
-        this.toast.success({detail:'Success Message',summary:"Login Successfully!!",duration:5000})
+        this.toast.success({detail:'SUCCESS!!!!',summary:"Login Successfully!!",duration:5000})
         // this.toast.info({detail:'Welcome Message',summary:"Welcome to our Dashboard!!",duration:5000})
         this.LoginForm.reset();
         this.router.navigate(['dashboard']);

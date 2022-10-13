@@ -5,6 +5,8 @@ import { ApiService } from '../service/api.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { NgConfirmService } from 'ng-confirm-box';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-dash',
@@ -19,7 +21,7 @@ export class DashComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(public dialog: MatDialog ,private api : ApiService) {}
+  constructor(public dialog: MatDialog ,private api : ApiService,private toast:NgToastService,  private confirmService:NgConfirmService) {}
 
   openDialog() {
     this.dialog.open(DialogComponent,{
@@ -31,8 +33,7 @@ export class DashComponent implements OnInit {
     })
   }
 
-
-  getAllProduct(){
+getAllProduct(){
     this.api.getProduct()
     .subscribe({
       next:(res)=>{
@@ -42,13 +43,14 @@ export class DashComponent implements OnInit {
 
       },
       error:(err)=>{
-        alert('error while recording/fetching the data')
+        this.toast.error({detail:'ERROR!!!',summary:"Error while recording/fetching the data!!",duration:5000})
+        // alert('error while recording/fetching the data')
       }
     })
 
   }
 
-  editProduct(row : any){
+editProduct(row : any){
    this.dialog.open(DialogComponent,{
      width:'40%',
      data:row
@@ -63,12 +65,22 @@ deleteProduct(id : number){
   this.api.deleteProduct(id)
   .subscribe({
     next:(res)=>{
-      alert("Product Deleted Successfully");
+      this.confirmService.showConfirm("Are you sure you want to delete this??",
+      ()=>{
+        this.toast.info({detail:'DELETED!!!',summary:"Product Deleted Successfully!!",duration:5000})
+        //  alert("Product Deleted Successfully");
+        },
+      ()=>{
+        this.toast.info({detail:'CANCELLED!!!',summary:"You cancelled your deletion!!",duration:5000})
+        // alert("Product not Deleted");
+      })
+      
        this.getAllProduct();
 
     },
     error:()=>{
-      alert('Error while Deleting the product');
+      this.toast.error({detail:'CANCELLED!!!',summary:"Error while Deleting the product!!",duration:5000})
+      // alert('Error while Deleting the product');
     }
   })
 
