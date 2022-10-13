@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup ,FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-signup',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 
 export class SignupComponent implements OnInit {
   public SignupForm!: FormGroup; 
-  constructor(private fb:FormBuilder,private http:HttpClient,private router:Router) { }
+  constructor(private fb:FormBuilder,private http:HttpClient,private router:Router,private toast:NgToastService) { }
 
   ngOnInit(): void {
     this.SignupForm= this.fb.group({
@@ -28,11 +29,13 @@ Signup(){
     console.log(this.SignupForm.value);
     this.http.post<any>("http://localhost:3000/signupusers/",this.SignupForm.value)
     .subscribe(res=>{
-      alert('Signup successfully');
+      this.toast.success({detail:'Success Message',summary:"Sign In Successfully!!",duration:5000})
+      // alert('Signup successfully');
       this.SignupForm.reset();
      this.router.navigate(['login']);
     },err=>{
-      alert('something went wrong')
+      this.toast.error({detail:'Failed Message',summary:"Sign In Failed, Something Went wrong!!",duration:5000})
+      // alert('something went wrong')
 
     })
     // send obj to db
