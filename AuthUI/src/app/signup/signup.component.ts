@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup ,FormControl,Validator, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup ,FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
