@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -9,12 +10,11 @@ import { AuthServiceService } from '../auth-service.service';
 })
 export class LoginComponent{
   
-  LoginForm!: FormGroup; 
+  public LoginForm!: FormGroup; 
 
-  constructor(private fb:FormBuilder,private AuthServiceService:AuthServiceService,private router:Router) { 
-  }
+  constructor(private fb:FormBuilder, private http:HttpClient, private router:Router) { }
+
 login(){
-
   if(this.LoginForm.valid){
     console.log(this.LoginForm.value);
     // send obj to db
