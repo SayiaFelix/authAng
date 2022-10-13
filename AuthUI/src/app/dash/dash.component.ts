@@ -71,7 +71,7 @@ deleteProduct(id : number){
         //  alert("Product Deleted Successfully");
         },
       ()=>{
-        this.toast.info({detail:'CANCELLED!!!',summary:"You cancelled your deletion!!",duration:5000})
+        this.toast.info({detail:'DELETED!!!',summary:"You cancelled your deletion!!",duration:5000})
         // alert("Product not Deleted");
       })
       

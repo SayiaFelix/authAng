@@ -35,15 +35,6 @@
       "comment": "sweeet",
       "date": "2022-10-11T21:00:00.000Z",
       "id": 6
-    },
-    {
-      "name": "embe",
-      "category": "Electronics",
-      "fresh": "Refurbished",
-      "price": 23,
-      "comment": "awesome",
-      "date": "2022-10-13T21:00:00.000Z",
-      "id": 7
     }
   ],
   "signupusers": [
