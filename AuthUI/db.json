@@ -17,6 +17,42 @@
       "comment": "fresh wow",
       "date": "2022-10-03T21:00:00.000Z",
       "id": 2
+    },
+    {
+      "name": "orange",
+      "category": "Fruits",
+      "fresh": "Brand New",
+      "price": 33,
+      "comment": "sweet",
+      "date": "2022-10-19T21:00:00.000Z",
+      "id": 3
+    },
+    {
+      "name": "gari",
+      "category": "Electronics",
+      "fresh": "Second Hand",
+      "price": 200,
+      "comment": "fity",
+      "date": "2022-10-06T21:00:00.000Z",
+      "id": 4
+    },
+    {
+      "name": "Managu",
+      "category": "Vegetable",
+      "fresh": "Second Hand",
+      "price": 20,
+      "comment": "wowww",
+      "date": "2022-10-05T21:00:00.000Z",
+      "id": 5
+    },
+    {
+      "name": "Juice",
+      "category": "Fruits",
+      "fresh": "Second Hand",
+      "price": 23,
+      "comment": "sweeet",
+      "date": "2022-10-11T21:00:00.000Z",
+      "id": 6
     }
   ],
   "signupusers": [
