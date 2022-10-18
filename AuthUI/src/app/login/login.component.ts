@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
@@ -13,7 +13,12 @@ export class LoginComponent{
   
   public LoginForm!: FormGroup; 
 
-  constructor(private fb:FormBuilder, private http:HttpClient, private router:Router,private toast: NgToastService) { }
+  constructor(private fb:FormBuilder, 
+    private http:HttpClient,
+     private router:Router,
+     private toast: NgToastService,ngZone:NgZone) {
+      
+      }
 
 login(){
   if(this.LoginForm.valid){
