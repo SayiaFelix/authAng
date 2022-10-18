@@ -4,6 +4,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 
+import { GoogleLoginProvider, SocialAuthService, SocialUser } from "@abacritt/angularx-social-login";
+// import { FacebookLoginProvider } from "@abacritt/angularx-social-login";
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,10 +15,11 @@ import { NgToastService } from 'ng-angular-popup';
 export class LoginComponent{
   
   public LoginForm!: FormGroup; 
-
+  user!:SocialUser
   constructor(private fb:FormBuilder, 
     private http:HttpClient,
      private router:Router,
+     private authService: SocialAuthService,
      private toast: NgToastService,ngZone:NgZone) {
       
       }
@@ -86,7 +90,19 @@ Object.keys(formGroup.controls).forEach(field=>{
       email: ['', Validators.required],
       password: ['', Validators.required]
     });
+// sign in with google
+    this.authService.authState.subscribe(
+      (user)=>{
+        this.user=user;
+      }
+    )
 
   }
+SignWithGoogle():any{
+  this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+}
 
+signOut():any{
+  this.authService.signOut();
+}
 }
