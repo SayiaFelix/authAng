@@ -16,6 +16,10 @@ export class LoginComponent{
   
   public LoginForm!: FormGroup; 
   user!:SocialUser
+  private accessToken = '';
+  loggedIn!: boolean;
+
+
   constructor(private fb:FormBuilder, 
     private http:HttpClient,
      private router:Router,
@@ -91,18 +95,27 @@ Object.keys(formGroup.controls).forEach(field=>{
       password: ['', Validators.required]
     });
 // sign in with google
-    this.authService.authState.subscribe(
-      (user)=>{
-        this.user=user;
-      }
-    )
+    // this.authService.authState.subscribe(
+    //   (user)=>{
+    //     this.user=user;
+    //   }
+    // )
+    // this.authService.authState.subscribe((user) => {
+    //   this.user = user;
+    //   this.loggedIn = (user != null);
+    // });
 
   }
-SignWithGoogle():any{
-  this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+// signWithGoogle():any{
+//   this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+// }
+
+// signOut():any{
+//   this.authService.signOut();
+// }
+loginWithGoogle(): void {
+  this.authService.signIn(GoogleLoginProvider.PROVIDER_ID)
+    .then(() => this.router.navigate(['dashboard']));
 }
 
-signOut():any{
-  this.authService.signOut();
-}
 }

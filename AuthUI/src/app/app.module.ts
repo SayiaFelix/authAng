@@ -30,8 +30,7 @@ import { NgToastModule } from 'ng-angular-popup';
 
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import {
-  GoogleLoginProvider,
-  FacebookLoginProvider
+  GoogleLoginProvider
 } from '@abacritt/angularx-social-login';
 
 @NgModule({
@@ -77,9 +76,9 @@ import {
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '639946946350-q6lnem267alsd2heb4hb10u2um7ojakm.apps.googleusercontent.com'
+              '639946946350-hhmc36gjee4qdunt843go8neo61gsvg3.apps.googleusercontent.com'
             )
-          }
+          },
           // {
           //   id: FacebookLoginProvider.PROVIDER_ID,
           //   provider: new FacebookLoginProvider('clientId')
