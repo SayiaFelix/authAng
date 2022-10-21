@@ -24,9 +24,8 @@ export class LoginComponent{
     private http:HttpClient,
      private router:Router,
      private authService: SocialAuthService,
-     private toast: NgToastService,ngZone:NgZone) {
-      
-      }
+     private toast: NgToastService
+     ) {}
 
 login(){
   if(this.LoginForm.valid){
@@ -113,9 +112,9 @@ Object.keys(formGroup.controls).forEach(field=>{
 // signOut():any{
 //   this.authService.signOut();
 // }
-loginWithGoogle(): void {
-  this.authService.signIn(GoogleLoginProvider.PROVIDER_ID)
-    .then(() => this.router.navigate(['dashboard']));
-}
+// loginWithGoogle(): void {
+//   this.authService.signIn(GoogleLoginProvider.PROVIDER_ID)
+//     .then(() => this.router.navigate(['dashboard']));
+// }
 
 }

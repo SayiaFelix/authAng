@@ -12,7 +12,11 @@ import { NgToastService } from 'ng-angular-popup';
 
 export class SignupComponent implements OnInit {
   public SignupForm!: FormGroup; 
-  constructor(private fb:FormBuilder,private http:HttpClient,private router:Router,private toast:NgToastService) { }
+  constructor(private fb:FormBuilder,
+    private http:HttpClient,
+    private router:Router,
+    private toast:NgToastService
+    ) { }
 
   ngOnInit(): void {
     this.SignupForm= this.fb.group({
